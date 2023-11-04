@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import { MenuIcon, SearchIcon } from "lucide-react";
 import { Button } from "./button";
 import { Card } from "./card";
@@ -12,9 +11,16 @@ import {
 } from "./sheet";
 import { Separator } from "./separator";
 import Link from "next/link";
+import { useState, useEffect } from 'react'
 
 export default function Header() {
-  return (
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  return isClient ?  (
     <Card className="flex items-center justify-between px-5 py-2">
       <Sheet>
         <SheetTrigger>
@@ -53,5 +59,5 @@ export default function Header() {
         </SheetContent>
       </Sheet>
     </Card>
-  );
+  ) : null;
 }
