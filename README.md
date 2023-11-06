@@ -3,8 +3,6 @@
 
 ![cover](.github/image.png?style=flat)
 
-![](.github/gif.gif)
-
 ## Getting Started
 
 First, install the dependencies:
