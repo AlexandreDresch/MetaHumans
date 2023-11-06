@@ -1,6 +1,6 @@
 export async function getHeroesData() {
   const res = await fetch(
-    "http://homologacao3.azapfy.com.br/api/ps/metahumans"
+    "//homologacao3.azapfy.com.br/api/ps/metahumans"
   );
 
   if (!res.ok) {
