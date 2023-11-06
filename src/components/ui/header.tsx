@@ -1,26 +1,22 @@
-"use client"
+"use client";
+
 import { MenuIcon, SearchIcon } from "lucide-react";
 import { Button } from "./button";
 import { Card } from "./card";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetHeader,
-  SheetTrigger,
-} from "./sheet";
-import { Separator } from "./separator";
+import { Sheet, SheetContent, SheetHeader, SheetTrigger } from "./sheet";
 import Link from "next/link";
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
+import { BattleHistory } from "./battleHistory";
+import SearchForm from "./searchForm";
 
 export default function Header() {
-  const [isClient, setIsClient] = useState(false)
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true)
-  }, [])
+    setIsClient(true);
+  }, []);
 
-  return isClient ?  (
+  return isClient ? (
     <Card className="flex items-center justify-between px-5 py-2">
       <Sheet>
         <SheetTrigger>
@@ -31,8 +27,10 @@ export default function Header() {
 
         <SheetContent side="left">
           <SheetHeader className="text-left text-lg font-semibold">
-            Menu
+            History
           </SheetHeader>
+
+          <BattleHistory />
         </SheetContent>
       </Sheet>
 
@@ -56,6 +54,8 @@ export default function Header() {
           <SheetHeader className="text-left text-lg font-semibold">
             Search
           </SheetHeader>
+
+          <SearchForm />
         </SheetContent>
       </Sheet>
     </Card>
