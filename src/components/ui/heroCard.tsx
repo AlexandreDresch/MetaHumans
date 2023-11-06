@@ -5,10 +5,17 @@ import { Badge } from "./badge";
 
 interface HeroProps {
   hero: Superhero;
+  onClick: () => void;
+  isSelected: boolean;
 }
-export default function HeroCard({ hero }: HeroProps) {
+export default function HeroCard({ hero, onClick, isSelected }: HeroProps) {
   return (
-    <div className="flex flex-col gap-2 rounded-lg bg-accent hover:scale-105 transition-transform">
+    <div
+      className={`flex flex-col gap-2 rounded-lg bg-accent hover:scale-105 transition-transform cursor-pointer ${
+        isSelected && "border-[1px] border-primary"
+      }`}
+      onClick={onClick}
+    >
       <div className="flex min-h-60 w-full items-center justify-center ">
         <Image
           src={hero.images.md ? hero.images.md : hero.images.lg}
