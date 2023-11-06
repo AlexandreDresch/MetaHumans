@@ -3,11 +3,17 @@
 
 ![cover](.github/image.png?style=flat)
 
-[Click here to visit](https://metahumans.vercel.app)
+![](.github/gif.gif)
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm i
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
