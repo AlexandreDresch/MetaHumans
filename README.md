@@ -32,6 +32,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 -   [ ] Typescript
 -   [ ] TailwindCSS
 -   [ ] Atomic Design
--   [ ] Lucid Icons
+-   [ ] Lucide Icons
 
 <br />
