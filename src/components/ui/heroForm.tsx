@@ -7,9 +7,10 @@ interface HeroFormProps {
   onSearch: (name: string) => void;
   name: string;
   setName: React.Dispatch<React.SetStateAction<string>>;
+  disabled: boolean;
 }
 
-export function HeroForm({ onSearch, name, setName }: HeroFormProps) {
+export function HeroForm({ onSearch, name, setName, disabled }: HeroFormProps) {
   function handleSearch() {
     onSearch(name);
   }
@@ -22,8 +23,9 @@ export function HeroForm({ onSearch, name, setName }: HeroFormProps) {
         className=""
         value={name}
         onChange={(e) => setName(e.target.value)}
+        disabled={disabled}
       />
-      <Button type="button" onClick={handleSearch}>
+      <Button type="button" onClick={handleSearch} disabled={disabled}>
         Search
       </Button>
     </div>
