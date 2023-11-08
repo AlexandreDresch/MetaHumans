@@ -3,6 +3,8 @@
 
 ![cover](.github/image.png?style=flat)
 
+[Click here to visit](https://meta-humans.vercel.app)
+
 ## Getting Started
 
 First, install the dependencies:
