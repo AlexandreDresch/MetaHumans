@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Dna } from "lucide-react";
 import { Superhero } from "@/app/@types/superhero";
 import { Badge } from "./badge";
+import { Card } from "./card";
 
 interface HeroProps {
   hero: Superhero;
@@ -10,7 +11,7 @@ interface HeroProps {
 }
 export default function HeroCard({ hero, onClick, isSelected }: HeroProps) {
   return (
-    <div
+    <Card
       className={`flex flex-col gap-2 rounded-lg bg-accent hover:scale-105 transition-transform cursor-pointer ${
         isSelected && "border-[1px] border-primary"
       }`}
@@ -40,6 +41,6 @@ export default function HeroCard({ hero, onClick, isSelected }: HeroProps) {
           </Badge>
         </div>
       </div>
-    </div>
+    </Card>
   );
 }
