@@ -20,9 +20,9 @@ interface ModalProps {
 export default function Modal({ openModal, setOpenModal }: ModalProps) {
   const { battleData, addFightToHistory } = useContext(HeroesContext);
 
-  {
-    return battleData.id !== 0 ? (
-      <Dialog open={openModal} onOpenChange={setOpenModal}>
+  return (
+    Object.keys(battleData).length > 0 && (
+      <Dialog open={openModal} onOpenChange={setOpenModal} modal>
         <DialogContent className="sm:max-w-[425px] md:min-w-[660px] px-3">
           <DialogHeader>
             <DialogTitle>Battle Results</DialogTitle>
@@ -89,6 +89,6 @@ export default function Modal({ openModal, setOpenModal }: ModalProps) {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-    ) : null;
-  }
+    )
+  );
 }
