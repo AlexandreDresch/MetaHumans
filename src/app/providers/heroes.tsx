@@ -53,11 +53,7 @@ export default function HeroesProvider({ children }: { children: ReactNode }) {
   const [selectedFilter, setSelectedFilter] = useState("");
   const [fights, setFights] = useState<IFightData[]>([]);
   const [openModal, setOpenModal] = useState(false);
-  const [battleData, setBattleData] = useState<IFightData>({
-    id: 0,
-    fighters: [],
-    winner: "",
-  });
+  const [battleData, setBattleData] = useState<IFightData>({} as IFightData);
 
   useEffect(() => {
     async function fetchHeroesData() {
