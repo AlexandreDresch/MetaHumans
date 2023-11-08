@@ -1,7 +1,5 @@
 export async function getHeroesData() {
-  const res = await fetch(
-    "http://homologacao3.azapfy.com.br/api/ps/metahumans"
-  );
+  const res = await fetch(process.env.NEXT_PUBLIC_DATABASE_URL);
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
@@ -9,5 +7,3 @@ export async function getHeroesData() {
 
   return res.json();
 }
-
-
